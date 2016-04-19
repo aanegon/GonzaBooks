@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		111B51461CC61C16004B0850 /* SMTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B51451CC61C16004B0850 /* SMTestClass.m */; };
+		119292201CC6273F0096002D /* SMBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 1192921F1CC6273F0096002D /* SMBook.m */; };
 		A37852D01C61D5BA009EB74E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A37852C21C61D5BA009EB74E /* Assets.xcassets */; };
 		A37852D41C61D5BA009EB74E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A37852CC1C61D5BA009EB74E /* AppDelegate.m */; };
 		A37852D51C61D5BA009EB74E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A37852CD1C61D5BA009EB74E /* main.m */; };
@@ -23,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		111B51441CC61C16004B0850 /* SMTestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestClass.h; sourceTree = "<group>"; };
+		111B51451CC61C16004B0850 /* SMTestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestClass.m; sourceTree = "<group>"; };
+		1192921E1CC6273F0096002D /* SMBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBook.h; sourceTree = "<group>"; };
+		1192921F1CC6273F0096002D /* SMBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBook.m; sourceTree = "<group>"; };
 		A37852A71C61D519009EB74E /* GonzaBOOKS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GonzaBOOKS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A37852C21C61D5BA009EB74E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A37852C51C61D5BA009EB74E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		111B51431CC61BB6004B0850 /* TEstClasses */ = {
+			isa = PBXGroup;
+			children = (
+				111B51441CC61C16004B0850 /* SMTestClass.h */,
+				111B51451CC61C16004B0850 /* SMTestClass.m */,
+			);
+			name = TEstClasses;
+			sourceTree = "<group>";
+		};
 		A378529E1C61D519009EB74E = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +134,7 @@
 		A37852CA1C61D5BA009EB74E /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				111B51431CC61BB6004B0850 /* TEstClasses */,
 				A38A58591C7C4A1100242998 /* Main&Delegate */,
 				A38A58491C7C3FCD00242998 /* Controllers */,
 				A38A58481C7C3FC800242998 /* Views */,
@@ -151,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				A38A584E1C7C42F700242998 /* Common */,
+				1192921E1CC6273F0096002D /* SMBook.h */,
+				1192921F1CC6273F0096002D /* SMBook.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -300,6 +318,8 @@
 				A37852D51C61D5BA009EB74E /* main.m in Sources */,
 				A38A585F1C7C5D0500242998 /* NSObject+Abstract.m in Sources */,
 				A38A58511C7C431400242998 /* PANavigationItemDescriptor.m in Sources */,
+				111B51461CC61C16004B0850 /* SMTestClass.m in Sources */,
+				119292201CC6273F0096002D /* SMBook.m in Sources */,
 				A37852D41C61D5BA009EB74E /* AppDelegate.m in Sources */,
 				A38A58461C7C3C1100242998 /* PAMenuCell.m in Sources */,
 				A38A584D1C7C400200242998 /* PABaseViewController.m in Sources */,

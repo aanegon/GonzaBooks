@@ -28,7 +28,25 @@ static NSString * const kMainStoryboardKey = @"Storyboard";
     // Override point for customization after application launch.
 //    [self installSwipeGestures];
     
+    NSString *str = @"4.09";
+    NSLog(@"Hola holita: %@", str);
+    
+    NSString *gonzalo = @"gonzalo";
+    gonzalo = [gonzalo uppercaseString];
+    
+    CGFloat floatNum = [self getNumberFloatValueWithNumber:@"4.09"];
+    NSLog(@"Conversion del float: %f", floatNum);
+    
     return YES;
+}
+
+- (CGFloat)getNumberFloatValueWithNumber:(NSString *)numerito
+{
+    CGFloat numFLoat;
+    
+    numFLoat = [numerito floatValue];
+    
+    return numFLoat;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
