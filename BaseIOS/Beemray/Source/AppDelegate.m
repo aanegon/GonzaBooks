@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "PAMenuController.h"
 #import "PAMenuCell.h"
+#import "SMBook.h"
 
 #import "UIView+Position.h"
 

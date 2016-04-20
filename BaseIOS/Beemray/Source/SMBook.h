@@ -13,6 +13,10 @@
  */
 @interface SMBook : NSObject
 
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) NSString *bookDescription;
+@property (nonatomic, readonly) NSArray *authors;
+
 /**
  *  Desiganted Initializer
  *
@@ -20,6 +24,6 @@
  *
  *  @return self
  */
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary NS_DESIGNATED_INITIALIZER;
 
 @end

@@ -7,36 +7,57 @@
 //
 
 #import "SMBook.h"
+#import "SMAuthor.h"
+
+static NSString * const kBookWsTitle = @"title";
+static NSString * const kBookWsDescription = @"description";
+static NSString * const kBookWsAuthors = @"authors";
 
 @interface SMBook ()
 
 @property (nonatomic, readwrite) NSString *title;
 @property (nonatomic, readwrite) NSString *bookDescription;
-@property (nonatomic, readwrite) NSArray *authors;
 
-@property (nonatomic, assign, getter=isDigitalBook) BOOL digitalBook;
+/**
+ *  An array of @p SMAuthor
+ */
+@property (nonatomic, readwrite) NSArray *authors;
 
 @end
 
 @implementation SMBook
 
+#pragma mark - Initializers
+
+- (instancetype)init {
+    return [self initWithDictionary:nil];
+}
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     
     if (self != nil) {
-        _title = [NSString string];
-        _bookDescription = [NSString string];
-        _authors = [NSArray arrayWithObjects:@"1",@"2", nil];
+        _title = dictionary[kBookWsTitle];
+        _bookDescription = dictionary[kBookWsDescription];
+        
+        NSArray *dictAuthors = [NSArray arrayWithArray:dictionary[kBookWsAuthors]];
+        NSMutableArray *newAuthors = [NSMutableArray arrayWithCapacity:[dictAuthors count]];
+        
+        for (NSString *author in dictAuthors) {
+            SMAuthor *newAuthor = [[SMAuthor alloc] initWithFullName:author];
+            [newAuthors addObject:newAuthor];
+        }
+        
+        _authors = [NSArray arrayWithArray:newAuthors];
     }
     
     return self;
 }
 
-- (void)setTitle:(NSString *)title {
-    if ([title hasPrefix:@"Libro"]) {
-        _digitalBook = YES;
-    }
-    
+#pragma mark - Public methods
+
+- (NSString *)description {
+   return [NSString stringWithFormat:@"Titulo: %@ \n Autores: %@ \n %@", _title, _authors, _bookDescription];
 }
 
 @end

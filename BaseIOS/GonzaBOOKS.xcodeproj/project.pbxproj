@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		111B51461CC61C16004B0850 /* SMTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B51451CC61C16004B0850 /* SMTestClass.m */; };
+		115FD0211CC7641900C718A3 /* SMAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = 115FD0201CC7641900C718A3 /* SMAuthor.m */; };
+		115FD0241CC76EBE00C718A3 /* SMImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 115FD0231CC76EBE00C718A3 /* SMImage.m */; };
+		115FD02B1CC7778E00C718A3 /* SMRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 115FD02A1CC7778E00C718A3 /* SMRequestFactory.m */; };
+		115FD02E1CC77B1B00C718A3 /* SMGoogleWSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 115FD02D1CC77B1B00C718A3 /* SMGoogleWSManager.m */; };
 		119292201CC6273F0096002D /* SMBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 1192921F1CC6273F0096002D /* SMBook.m */; };
 		A37852D01C61D5BA009EB74E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A37852C21C61D5BA009EB74E /* Assets.xcassets */; };
 		A37852D41C61D5BA009EB74E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A37852CC1C61D5BA009EB74E /* AppDelegate.m */; };
@@ -27,6 +31,14 @@
 /* Begin PBXFileReference section */
 		111B51441CC61C16004B0850 /* SMTestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestClass.h; sourceTree = "<group>"; };
 		111B51451CC61C16004B0850 /* SMTestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestClass.m; sourceTree = "<group>"; };
+		115FD01F1CC7641900C718A3 /* SMAuthor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAuthor.h; sourceTree = "<group>"; };
+		115FD0201CC7641900C718A3 /* SMAuthor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMAuthor.m; sourceTree = "<group>"; };
+		115FD0221CC76EBE00C718A3 /* SMImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMImage.h; sourceTree = "<group>"; };
+		115FD0231CC76EBE00C718A3 /* SMImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMImage.m; sourceTree = "<group>"; };
+		115FD0291CC7778E00C718A3 /* SMRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMRequestFactory.h; sourceTree = "<group>"; };
+		115FD02A1CC7778E00C718A3 /* SMRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMRequestFactory.m; sourceTree = "<group>"; };
+		115FD02C1CC77B1B00C718A3 /* SMGoogleWSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMGoogleWSManager.h; sourceTree = "<group>"; };
+		115FD02D1CC77B1B00C718A3 /* SMGoogleWSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGoogleWSManager.m; sourceTree = "<group>"; };
 		1192921E1CC6273F0096002D /* SMBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBook.h; sourceTree = "<group>"; };
 		1192921F1CC6273F0096002D /* SMBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBook.m; sourceTree = "<group>"; };
 		A37852A71C61D519009EB74E /* GonzaBOOKS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GonzaBOOKS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +87,17 @@
 				111B51451CC61C16004B0850 /* SMTestClass.m */,
 			);
 			name = TEstClasses;
+			sourceTree = "<group>";
+		};
+		115FD0281CC776F400C718A3 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				115FD0291CC7778E00C718A3 /* SMRequestFactory.h */,
+				115FD02A1CC7778E00C718A3 /* SMRequestFactory.m */,
+				115FD02C1CC77B1B00C718A3 /* SMGoogleWSManager.h */,
+				115FD02D1CC77B1B00C718A3 /* SMGoogleWSManager.m */,
+			);
+			name = Webservice;
 			sourceTree = "<group>";
 		};
 		A378529E1C61D519009EB74E = {
@@ -166,9 +189,14 @@
 		A38A58471C7C3FC000242998 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				115FD0281CC776F400C718A3 /* Webservice */,
 				A38A584E1C7C42F700242998 /* Common */,
 				1192921E1CC6273F0096002D /* SMBook.h */,
 				1192921F1CC6273F0096002D /* SMBook.m */,
+				115FD01F1CC7641900C718A3 /* SMAuthor.h */,
+				115FD0201CC7641900C718A3 /* SMAuthor.m */,
+				115FD0221CC76EBE00C718A3 /* SMImage.h */,
+				115FD0231CC76EBE00C718A3 /* SMImage.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -313,12 +341,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				115FD02E1CC77B1B00C718A3 /* SMGoogleWSManager.m in Sources */,
 				A37852D61C61D5BA009EB74E /* ViewController.m in Sources */,
+				115FD0211CC7641900C718A3 /* SMAuthor.m in Sources */,
 				A38A58691C7C7B5400242998 /* UIView+Position.m in Sources */,
 				A37852D51C61D5BA009EB74E /* main.m in Sources */,
 				A38A585F1C7C5D0500242998 /* NSObject+Abstract.m in Sources */,
 				A38A58511C7C431400242998 /* PANavigationItemDescriptor.m in Sources */,
 				111B51461CC61C16004B0850 /* SMTestClass.m in Sources */,
+				115FD0241CC76EBE00C718A3 /* SMImage.m in Sources */,
+				115FD02B1CC7778E00C718A3 /* SMRequestFactory.m in Sources */,
 				119292201CC6273F0096002D /* SMBook.m in Sources */,
 				A37852D41C61D5BA009EB74E /* AppDelegate.m in Sources */,
 				A38A58461C7C3C1100242998 /* PAMenuCell.m in Sources */,
