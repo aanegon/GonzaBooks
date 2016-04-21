@@ -31,4 +31,16 @@ static NSString * const kGoogleJSONDataFormat = @"application/json;charset=utf-8
     return request;
 }
 
++ (NSURLRequest *)imageWithURL:(NSURL *)imageUrl {
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:imageUrl
+                                                           cachePolicy:NSURLRequestReloadIgnoringCacheData
+                                                       timeoutInterval:60.0];
+    
+    [request addValue:kGoogleBooksUserAgent forHTTPHeaderField:@"User-Agent"];
+    [request addValue:kGoogleJSONDataFormat forHTTPHeaderField:@"Accept"];
+    
+    return request;
+}
+
 @end

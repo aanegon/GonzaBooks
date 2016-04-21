@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "PANavigationItemDescriptor.h"
+#import "SMGoogleWSManager.h"
 
 #import "PABaseViewController+Protected.h"
 #import "UIViewController+PABarButtons.h"
@@ -15,6 +16,7 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -29,6 +31,9 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    [[SMGoogleWSManager sharedInstance] getBookImageWithURL:[NSURL URLWithString:@"http://books.google.es/books/content?id=hper1VsSlTkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"] completionBlock:^(UIImage *image) {
+        [_imageView setImage:image];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

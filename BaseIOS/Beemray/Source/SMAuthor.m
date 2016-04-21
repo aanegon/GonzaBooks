@@ -51,8 +51,8 @@ typedef NS_ENUM(NSUInteger, SMFullNamePosition) {
         NSArray *substring = [fullName componentsSeparatedByString:kAuthorSeparatorName];
         
         _name = substring[SMFullNamePosition_Name];
-        _lastName = substring[SMFullNamePosition_LastName];
-        _surname = substring[SMFullNamePosition_SurName];
+        _lastName = ([substring count] > 1) ? substring[SMFullNamePosition_LastName] : [NSString string];
+        _surname =  ([substring count] > 2) ? substring[SMFullNamePosition_SurName] : [NSString string];
     }
     
     return self;

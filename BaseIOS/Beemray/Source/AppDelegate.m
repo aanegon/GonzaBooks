@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 #import "PAMenuController.h"
 #import "PAMenuCell.h"
+
 #import "SMBook.h"
+#import "SMGoogleWSManager.h"
 
 #import "UIView+Position.h"
 
@@ -29,14 +31,15 @@ static NSString * const kMainStoryboardKey = @"Storyboard";
     // Override point for customization after application launch.
 //    [self installSwipeGestures];
     
-    NSString *str = @"4.09";
-    NSLog(@"Hola holita: %@", str);
     
-    NSString *gonzalo = @"gonzalo";
-    gonzalo = [gonzalo uppercaseString];
     
-    CGFloat floatNum = [self getNumberFloatValueWithNumber:@"4.09"];
-    NSLog(@"Conversion del float: %f", floatNum);
+    SMGoogleWSManager *webservice = [SMGoogleWSManager sharedInstance];
+    [webservice getItemsWithSearch:@"rings" successBlock:^(NSArray *items) {
+        NSLog(@"%@", items);
+    } errorBlock:^(NSError *error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }];
+    
     
     return YES;
 }

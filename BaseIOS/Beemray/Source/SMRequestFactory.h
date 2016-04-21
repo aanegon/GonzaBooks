@@ -22,4 +22,13 @@
  */
 + (NSURLRequest *)searchItemsWithText:(NSString *)text;
 
+/**
+ *  Request to download an image
+ *
+ *  @param imageUrl @p NSURL representing the url
+ *
+ *  @return @p NSURLRequest
+ */
++ (NSURLRequest *)imageWithURL:(NSURL *)imageUrl;
+
 @end
