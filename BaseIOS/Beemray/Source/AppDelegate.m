@@ -33,12 +33,14 @@ static NSString * const kMainStoryboardKey = @"Storyboard";
     
     
     
-    SMGoogleWSManager *webservice = [SMGoogleWSManager sharedInstance];
-    [webservice getItemsWithSearch:@"rings" successBlock:^(NSArray *items) {
-        NSLog(@"%@", items);
-    } errorBlock:^(NSError *error) {
-        NSLog(@"%@", [error localizedDescription]);
-    }];
+//    SMGoogleWSManager *webservice = [SMGoogleWSManager sharedInstance];
+//    [webservice getItemsWithSearch:@"rings" successBlock:^(NSArray *items) {
+//        NSLog(@"%@", items);
+//    } errorBlock:^(NSError *error) {
+//        NSLog(@"%@", [error localizedDescription]);
+//    }];
+//    
+    
     
     
     return YES;
