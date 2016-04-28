@@ -6,6 +6,34 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="ggz-IJ-Oz6">
+            <objects>
+                <viewController storyboardIdentifier="SMBusyView" id="HZ7-eE-Ng1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OcK-YF-DXJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="M3N-yB-9hF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7pg-0T-FJ6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Xna-GV-Xq2">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xna-GV-Xq2" firstAttribute="centerY" secondItem="7pg-0T-FJ6" secondAttribute="centerY" id="ELe-rk-XXc"/>
+                            <constraint firstItem="Xna-GV-Xq2" firstAttribute="centerX" secondItem="7pg-0T-FJ6" secondAttribute="centerX" id="TAg-yd-9G9"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SRs-h5-r7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="-631"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="2RG-CL-MI7">
             <objects>
                 <viewController id="Y3F-yV-iat" customClass="ViewController" sceneMemberID="viewController">
@@ -24,6 +52,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y3F-yV-iat" id="A1O-GY-Nfc"/>
+                                </connections>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JbO-J1-Gnb" userLabel="Books Table">
                                 <rect key="frame" x="20" y="110" width="560" height="482"/>
@@ -56,6 +87,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="vnM-eA-9cq"/>
                     <connections>
+                        <outlet property="heightSearchTextConstraint" destination="5gD-ex-sFm" id="i50-AH-uQh"/>
+                        <outlet property="noResultsLbl" destination="yBh-sO-xtq" id="C81-Iu-Ndh"/>
+                        <outlet property="searchText" destination="K5A-EI-yMq" id="EWZ-Za-fes"/>
                         <outlet property="tableView" destination="JbO-J1-Gnb" id="eLg-Ya-zkE"/>
                         <segue destination="6AP-gb-k4d" kind="show" identifier="ShowBookDetail" id="ggd-gh-SCa"/>
                     </connections>
@@ -71,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="822" y="117"/>
         </scene>
-        <!--View Controller-->
+        <!--Book Details View Controller-->
         <scene sceneID="UjD-Tw-VXM">
             <objects>
-                <viewController id="6AP-gb-k4d" sceneMemberID="viewController">
+                <viewController id="6AP-gb-k4d" customClass="SMBookDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="alR-vR-a19"/>
                         <viewControllerLayoutGuide type="bottom" id="Zhd-co-Cg8"/>
@@ -82,6 +116,31 @@
                     <view key="view" contentMode="scaleToFill" id="t9Z-EO-Rk7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koj-RW-1r5">
+                                <rect key="frame" x="189" y="119" width="222" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="reloadBookDescription:" destination="6AP-gb-k4d" eventType="touchUpInside" id="4Or-o2-lut"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EWf-Vz-26S">
+                                <rect key="frame" x="240" y="216" width="121" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeSegmentValue:" destination="6AP-gb-k4d" eventType="valueChanged" id="ow4-Xk-Ihx"/>
+                                </connections>
+                            </segmentedControl>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Opf-wt-BAA">
+                                <rect key="frame" x="276" y="332" width="51" height="31"/>
+                                <connections>
+                                    <action selector="changeSwitchValue:" destination="6AP-gb-k4d" eventType="valueChanged" id="9Ig-RF-VTe"/>
+                                </connections>
+                            </switch>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>

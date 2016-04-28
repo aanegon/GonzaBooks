@@ -20,4 +20,11 @@
 
 @property (weak, nonatomic) id<PABaseMenuSwipeControllerDelegate> delegate;
 
+/**
+ *  Retrieve the busy view
+ *
+ *  @return a busy view @p UIView
+ */
+- (UIView *)retrieveBusyView;
+
 @end

@@ -12,6 +12,7 @@
 		115FD0241CC76EBE00C718A3 /* SMImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 115FD0231CC76EBE00C718A3 /* SMImage.m */; };
 		115FD02B1CC7778E00C718A3 /* SMRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 115FD02A1CC7778E00C718A3 /* SMRequestFactory.m */; };
 		115FD02E1CC77B1B00C718A3 /* SMGoogleWSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 115FD02D1CC77B1B00C718A3 /* SMGoogleWSManager.m */; };
+		116CA5531CD1EC9F0026E2B2 /* SMBookDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116CA5521CD1EC9F0026E2B2 /* SMBookDetailsViewController.m */; };
 		119292201CC6273F0096002D /* SMBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 1192921F1CC6273F0096002D /* SMBook.m */; };
 		A37852D01C61D5BA009EB74E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A37852C21C61D5BA009EB74E /* Assets.xcassets */; };
 		A37852D41C61D5BA009EB74E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A37852CC1C61D5BA009EB74E /* AppDelegate.m */; };
@@ -39,6 +40,8 @@
 		115FD02A1CC7778E00C718A3 /* SMRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMRequestFactory.m; sourceTree = "<group>"; };
 		115FD02C1CC77B1B00C718A3 /* SMGoogleWSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMGoogleWSManager.h; sourceTree = "<group>"; };
 		115FD02D1CC77B1B00C718A3 /* SMGoogleWSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGoogleWSManager.m; sourceTree = "<group>"; };
+		116CA5511CD1EC9F0026E2B2 /* SMBookDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBookDetailsViewController.h; sourceTree = "<group>"; };
+		116CA5521CD1EC9F0026E2B2 /* SMBookDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBookDetailsViewController.m; sourceTree = "<group>"; };
 		1192921E1CC6273F0096002D /* SMBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBook.h; sourceTree = "<group>"; };
 		1192921F1CC6273F0096002D /* SMBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBook.m; sourceTree = "<group>"; };
 		A37852A71C61D519009EB74E /* GonzaBOOKS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GonzaBOOKS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +174,8 @@
 			children = (
 				A37852CE1C61D5BA009EB74E /* ViewController.h */,
 				A37852CF1C61D5BA009EB74E /* ViewController.m */,
+				116CA5511CD1EC9F0026E2B2 /* SMBookDetailsViewController.h */,
+				116CA5521CD1EC9F0026E2B2 /* SMBookDetailsViewController.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 			files = (
 				115FD02E1CC77B1B00C718A3 /* SMGoogleWSManager.m in Sources */,
 				A37852D61C61D5BA009EB74E /* ViewController.m in Sources */,
+				116CA5531CD1EC9F0026E2B2 /* SMBookDetailsViewController.m in Sources */,
 				115FD0211CC7641900C718A3 /* SMAuthor.m in Sources */,
 				A38A58691C7C7B5400242998 /* UIView+Position.m in Sources */,
 				A37852D51C61D5BA009EB74E /* main.m in Sources */,

@@ -23,6 +23,23 @@
 
 static CGFloat const kFixedSpaceWidth = 16.0f;
 
+#pragma mark - Public method
+
+- (UIView *)retrieveBusyView {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"SMBusyView"];
+    UIActivityIndicatorView *activity;
+    for (UIView *view in [[vc view] subviews]) {
+        if ([view isKindOfClass:[UIActivityIndicatorView class]]) {
+            activity = (UIActivityIndicatorView *)view;
+            [activity startAnimating];
+            break;
+        }
+    }
+    
+    return [vc view];
+}
+
 #pragma mark - View life cycle.
 
 - (void)viewDidLoad {
