@@ -8,10 +8,12 @@
 
 #import "SMBook.h"
 #import "SMAuthor.h"
+#import "SMImage.h"
 
 static NSString * const kBookWsTitle = @"title";
 static NSString * const kBookWsDescription = @"description";
 static NSString * const kBookWsAuthors = @"authors";
+static NSString * const kBookWsImages = @"imageLinks";
 
 @interface SMBook ()
 
@@ -22,6 +24,7 @@ static NSString * const kBookWsAuthors = @"authors";
  *  An array of @p SMAuthor
  */
 @property (nonatomic, readwrite) NSArray *authors;
+@property (nonatomic, readwrite) SMImage *images;
 
 @end
 
@@ -49,6 +52,8 @@ static NSString * const kBookWsAuthors = @"authors";
         }
         
         _authors = [NSArray arrayWithArray:newAuthors];
+        
+        _images = [[SMImage alloc] initWithDictionary:dictionary[kBookWsImages]];
     }
     
     return self;

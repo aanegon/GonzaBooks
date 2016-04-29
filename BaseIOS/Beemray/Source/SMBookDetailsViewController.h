@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "PABaseViewController.h"
 
+@class SMBook;
+
 @interface SMBookDetailsViewController : PABaseViewController
+
+@property (nonatomic, strong) SMBook *book;
 
 @end

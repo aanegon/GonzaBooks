@@ -95,17 +95,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hacerCualquierCosa) name:@"Paquito" object:nil];
+    NSNotificationCenter *notifCenter = [NSNotificationCenter defaultCenter];
+    [notifCenter addObserver:self selector:@selector(hacerCualquierCosa) name:@"Paquito" object:nil];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWIllShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hacerCualquierCosa) name:UIApplicationDidEnterBackgroundNotification object:nil];
     
-    _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardWIllShow:)];
-    [_tapGesture setNumberOfTapsRequired:1];
-    [self.view addGestureRecognizer:_tapGesture];
-    
-    [_tableView setDelegate:self];
-    [_tableView setDataSource:self];
+//    _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardWIllShow:)];
+//    [_tapGesture setNumberOfTapsRequired:1];
+//    [self.view addGestureRecognizer:_tapGesture];
     
 }
 
@@ -116,9 +114,8 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
 
-    [self removeObserver:self forKeyPath:@"Paquito"];
-    [self removeObserver:self forKeyPath:UIKeyboardWillShowNotification];
-    [self removeObserver:self forKeyPath:UIApplicationDidEnterBackgroundNotification];
+    NSNotificationCenter *notifCenter = [NSNotificationCenter defaultCenter];
+    [notifCenter removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -130,25 +127,27 @@
     if ([[segue identifier] isEqualToString:@"ShowBookDetail"]) {
         SMBook *book = sender;
         SMBookDetailsViewController *booksVC = [segue destinationViewController];
+        [booksVC setBook:book];
     }
 }
 
 #pragma mark - UItableViewdelegate methods
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"ShowBookDetail" sender:nil];
+    SMBook *book = _books[[indexPath row]];
+    [self performSegueWithIdentifier:@"ShowBookDetail" sender:book];
 
     return nil;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"");
 }
 
 #pragma mark - UITableViewDatasource methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_books count];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -180,12 +179,12 @@
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-//    _dismissBt = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [_dismissBt setBackgroundColor:[UIColor clearColor]];
-//    [_dismissBt setFrame:[[self view] frame]];
-//    [_dismissBt addTarget:self action:@selector(dismissKeyboardButton:) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    [self.view addSubview:_dismissBt];
+    _dismissBt = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_dismissBt setBackgroundColor:[UIColor clearColor]];
+    [_dismissBt setFrame:[[self view] frame]];
+    [_dismissBt addTarget:self action:@selector(dismissKeyboardButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:_dismissBt];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

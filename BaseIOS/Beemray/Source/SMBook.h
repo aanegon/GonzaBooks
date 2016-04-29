@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class SMImage;
+
 /**
  *  Represents a book
  */
@@ -16,6 +18,7 @@
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSString *bookDescription;
 @property (nonatomic, readonly) NSArray *authors;
+@property (nonatomic, readonly) SMImage *images;
 
 /**
  *  Desiganted Initializer

@@ -1,0 +1,5 @@
+DEBERES:
+
+1- Estudiar como acceder a variables de objetos, porque se usa cada uno de los accesos disponibles. [_book images] ó _book.image
+2- COmo subir el texto de un textview hasdta arriba.
+3- Hacer otro view controller, en el que me vas mostrar el rating del libro: sobre una escala de 5, pones la estrella amarilla por cada punto que tenga y la negra para los vacios.
