@@ -27,4 +27,19 @@
  */
 - (UIView *)retrieveBusyView;
 
+/**
+ *  Show the lateral menu
+ */
+- (void)showLateralMenu;
+
+/**
+ *  Subclass is responisbily of manage this method.
+ */
+- (void)showCalendar;
+
+/**
+ *  Subclass is responisbily of manage this method.
+ */
+- (void)showSearch;
+
 @end

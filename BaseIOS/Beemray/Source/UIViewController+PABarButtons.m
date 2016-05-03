@@ -93,4 +93,25 @@ static NSString * const kSearchButtonImage = @"";
     return [[UIBarButtonItem alloc] initWithCustomView:searchButton];
 }
 
+- (UIBarButtonItem *)getButtonWithText:(NSString *)text action:(SEL)action {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:text forState:UIControlStateNormal];
+    UIFont *fontButton = [UIFont systemFontOfSize:10.0];
+    [[button titleLabel] setFont:fontButton];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor greenColor]];
+    [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    NSDictionary *attributes = @{
+                                 NSFontAttributeName : fontButton,
+                                 NSForegroundColorAttributeName : [UIColor blackColor]
+                                 };
+    
+    CGSize size = [text sizeWithAttributes:attributes];
+    CGRect rect = CGRectMake([button frame].origin.x, [button frame].origin.y, size.width, size.height);
+    
+    [button setFrame:rect];
+    return [[UIBarButtonItem alloc] initWithCustomView:button];
+}
+
 @end

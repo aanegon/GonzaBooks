@@ -17,6 +17,7 @@
 
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSString *bookDescription;
+@property (nonatomic, readonly) NSNumber *averageRating;
 @property (nonatomic, readonly) NSArray *authors;
 @property (nonatomic, readonly) SMImage *images;
 

@@ -46,4 +46,14 @@
  */
 - (UIBarButtonItem *)getSearchButton:(SEL)action;
 
+/**
+ *  Creates a button following parameter text
+ *
+ *  @param text   setx the title of the button
+ *  @param action sets the selector for the UICOntrolEventTouchUpInside event.
+ *
+ *  @return a bar button item for @p UINavigationItem
+ */
+- (UIBarButtonItem *)getButtonWithText:(NSString *)text action:(SEL)action;
+
 @end

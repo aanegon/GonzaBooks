@@ -12,6 +12,7 @@
 
 static NSString * const kBookWsTitle = @"title";
 static NSString * const kBookWsDescription = @"description";
+static NSString * const kBookWsAverageRating = @"averageRating";
 static NSString * const kBookWsAuthors = @"authors";
 static NSString * const kBookWsImages = @"imageLinks";
 
@@ -19,6 +20,7 @@ static NSString * const kBookWsImages = @"imageLinks";
 
 @property (nonatomic, readwrite) NSString *title;
 @property (nonatomic, readwrite) NSString *bookDescription;
+@property (nonatomic, readwrite) NSNumber *averageRating;
 
 /**
  *  An array of @p SMAuthor
@@ -42,6 +44,7 @@ static NSString * const kBookWsImages = @"imageLinks";
     if (self != nil) {
         _title = dictionary[kBookWsTitle];
         _bookDescription = dictionary[kBookWsDescription];
+        _averageRating = dictionary[kBookWsAverageRating];
         
         NSArray *dictAuthors = [NSArray arrayWithArray:dictionary[kBookWsAuthors]];
         NSMutableArray *newAuthors = [NSMutableArray arrayWithCapacity:[dictAuthors count]];
@@ -62,7 +65,7 @@ static NSString * const kBookWsImages = @"imageLinks";
 #pragma mark - Public methods
 
 - (NSString *)description {
-   return [NSString stringWithFormat:@"Titulo: %@ \n Autores: %@ \n %@", _title, _authors, _bookDescription];
+   return [NSString stringWithFormat:@"Titulo: %@ \n Autores: %@ \n %@ \n AverageRating: %@", _title, _authors, _bookDescription, _averageRating];
 }
 
 @end

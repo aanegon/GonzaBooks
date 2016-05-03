@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *bookDescription;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingActivity;
 @property (nonatomic, assign, getter=isLoading) BOOL loading;
+@property (weak, nonatomic) IBOutlet UITextView *bookAverating;
 
 @end
 
@@ -48,6 +49,7 @@
 - (void)setup {
     [self setTitle:[_book title]];
     [_bookDescription setText:[_book bookDescription]];
+    [_bookAverating setText:[[_book averageRating] stringValue]];
     [_imagesSegmentedControl setSelectedSegmentIndex:0];
     
     NSURL *bookURL = [NSURL URLWithString:[[_book images] small]];

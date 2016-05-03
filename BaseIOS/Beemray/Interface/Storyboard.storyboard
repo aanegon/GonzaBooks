@@ -105,6 +105,60 @@
             </objects>
             <point key="canvasLocation" x="822" y="117"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ZRQ-xR-Pqy">
+            <objects>
+                <viewController id="gnx-UA-lis" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BKt-3d-1GE"/>
+                        <viewControllerLayoutGuide type="bottom" id="aG5-xT-qhg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fsl-NW-STR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XQB-Xf-cF2">
+                                <rect key="frame" x="0.0" y="162" width="600" height="438"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RRT-Tw-rWq">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="b9E-2s-2Ve">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="gnx-UA-lis" id="Ppm-w9-WJs"/>
+                                    <outlet property="delegate" destination="gnx-UA-lis" id="hkn-aY-Cv2"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ru0-Hh-fpi">
+                                <rect key="frame" x="217" y="72" width="161" height="30"/>
+                                <state key="normal" title="ghbjvbghvbh"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XQB-Xf-cF2" firstAttribute="top" secondItem="BKt-3d-1GE" secondAttribute="bottom" constant="142" id="ArF-jk-Zpm"/>
+                            <constraint firstItem="aG5-xT-qhg" firstAttribute="top" secondItem="XQB-Xf-cF2" secondAttribute="bottom" id="gjS-dd-oUk"/>
+                            <constraint firstItem="XQB-Xf-cF2" firstAttribute="leading" secondItem="fsl-NW-STR" secondAttribute="leading" id="rcr-17-SLm"/>
+                            <constraint firstAttribute="trailing" secondItem="XQB-Xf-cF2" secondAttribute="trailing" id="sfg-tP-Fzz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KrW-v2-0Z0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="877" y="1021"/>
+        </scene>
         <!--Book Details View Controller-->
         <scene sceneID="UjD-Tw-VXM">
             <objects>
@@ -148,11 +202,20 @@
                                 <rect key="frame" x="281" y="207" width="37" height="37"/>
                                 <color key="color" red="1" green="0.19478336730000001" blue="0.2423033919" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5ab-vJ-4dL">
+                                <rect key="frame" x="20" y="72" width="220" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.68666179790000004" green="1" blue="0.42428104290000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="3pb-Nl-HF0" firstAttribute="leading" secondItem="t9Z-EO-Rk7" secondAttribute="leading" constant="20" id="1hm-ir-pAQ"/>
+                            <constraint firstItem="5ab-vJ-4dL" firstAttribute="top" secondItem="alR-vR-a19" secondAttribute="bottom" constant="8" id="7iU-GF-c2G"/>
                             <constraint firstItem="N0g-GX-s2T" firstAttribute="leading" secondItem="t9Z-EO-Rk7" secondAttribute="leading" constant="20" id="Bdw-yu-NXM"/>
+                            <constraint firstItem="5ab-vJ-4dL" firstAttribute="leading" secondItem="t9Z-EO-Rk7" secondAttribute="leading" constant="20" id="Bus-ZV-xkf"/>
                             <constraint firstItem="KKr-Hl-XlF" firstAttribute="centerX" secondItem="3pb-Nl-HF0" secondAttribute="centerX" id="Hv5-0n-ZVj"/>
                             <constraint firstItem="N0g-GX-s2T" firstAttribute="top" secondItem="3pb-Nl-HF0" secondAttribute="bottom" constant="8" id="K7d-GG-2R9"/>
                             <constraint firstItem="EWf-Vz-26S" firstAttribute="centerX" secondItem="t9Z-EO-Rk7" secondAttribute="centerX" id="KGQ-Mk-yaF"/>
@@ -160,12 +223,15 @@
                             <constraint firstItem="3pb-Nl-HF0" firstAttribute="top" secondItem="EWf-Vz-26S" secondAttribute="bottom" constant="8" id="NMm-ul-6Fu"/>
                             <constraint firstAttribute="trailing" secondItem="N0g-GX-s2T" secondAttribute="trailing" constant="20" id="XYC-RF-ETa"/>
                             <constraint firstItem="N0g-GX-s2T" firstAttribute="top" secondItem="3pb-Nl-HF0" secondAttribute="bottom" constant="8" id="byp-kH-0HL"/>
+                            <constraint firstItem="EWf-Vz-26S" firstAttribute="leading" secondItem="5ab-vJ-4dL" secondAttribute="trailing" constant="12" id="dRN-Gb-Foq"/>
                             <constraint firstItem="Zhd-co-Cg8" firstAttribute="top" secondItem="N0g-GX-s2T" secondAttribute="bottom" constant="8" id="f3b-tS-Fo7"/>
                             <constraint firstItem="EWf-Vz-26S" firstAttribute="top" secondItem="alR-vR-a19" secondAttribute="bottom" constant="8" id="fQL-qc-H8f"/>
+                            <constraint firstItem="3pb-Nl-HF0" firstAttribute="top" secondItem="5ab-vJ-4dL" secondAttribute="bottom" constant="8" id="fiZ-qb-lN1"/>
                             <constraint firstItem="KKr-Hl-XlF" firstAttribute="centerY" secondItem="3pb-Nl-HF0" secondAttribute="centerY" id="h3t-Ge-9lf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bookAverating" destination="5ab-vJ-4dL" id="2af-ID-rGw"/>
                         <outlet property="bookDescription" destination="N0g-GX-s2T" id="JQ3-MZ-dIZ"/>
                         <outlet property="bookImageView" destination="3pb-Nl-HF0" id="YeA-EL-fxj"/>
                         <outlet property="imagesSegmentedControl" destination="EWf-Vz-26S" id="ckD-wV-HSi"/>

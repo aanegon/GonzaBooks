@@ -90,6 +90,12 @@
     
 }
 
+#pragma mark - Public methods
+
+- (IBAction)showCollectionView:(id)sender {
+    [self performSegueWithIdentifier:@"ShowBookDetail" sender:nil];
+}
+
 #pragma mark - View life cycle methods
 
 - (void)viewDidLoad {
@@ -196,15 +202,14 @@
 
 #pragma mark - NavigationDescriptor methods.
 
-//- (PANavigationItemDescriptor *)navigationItemDescriptor {
-//    PANavigationItemDescriptor *navDescriptior = [super navigationItemDescriptor];
-//    
-//    [navDescriptior setLeftButton:[self getGoMenuButton:@selector(showLateralMenu)]];
-//    [navDescriptior setRightButton:[self getCalendarButton:@selector(showCalendar)]];
-//    [navDescriptior setThirdPartyOption:PANavigationThirdItemOption_Calendar];
-//    
-//    return navDescriptior;
-//}
+- (PANavigationItemDescriptor *)navigationItemDescriptor {
+    PANavigationItemDescriptor *navDescriptior = [super navigationItemDescriptor];
+    
+    [navDescriptior setLeftButton:[self getGoMenuButton:@selector(showLateralMenu)]];
+    [navDescriptior setRightButton:[self getButtonWithText:@"Perico" action:@selector(showCollectionView:)]];
+    
+    return navDescriptior;
+}
 
 #pragma mark - NavigationDescriptor Subclass responsibility.
 
