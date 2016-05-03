@@ -108,6 +108,16 @@ static NSString * const kSearchButtonImage = @"";
                                  };
     
     CGSize size = [text sizeWithAttributes:attributes];
+    
+    //seguro estoy de que tu así no lo harías.... pero funca jajaj
+    if (size.width < 40.0) {
+        size.width = 40.0;
+    }
+    if (size.height < 40.0) {
+        size.height = 40.0;
+    }
+    
+    
     CGRect rect = CGRectMake([button frame].origin.x, [button frame].origin.y, size.width, size.height);
     
     [button setFrame:rect];

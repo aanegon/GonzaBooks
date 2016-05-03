@@ -52,6 +52,8 @@
     [_bookAverating setText:[[_book averageRating] stringValue]];
     [_imagesSegmentedControl setSelectedSegmentIndex:0];
     
+    [_bookDescription setContentOffset: CGPointMake(0,-220) animated:NO];
+    
     NSURL *bookURL = [NSURL URLWithString:[[_book images] small]];
     
     self.loading = YES;
