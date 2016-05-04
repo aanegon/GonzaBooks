@@ -1,0 +1,9 @@
+DEBERES:
+
+**1- Estudiar como acceder a variables de objetos, porque se usa cada uno de los accesos disponibles. [_book images] ó _book.image
+**2- COmo subir el texto de un textview hasdta arriba.
+4- Protocolos y delegados, leer apple documentation.
+3- Hacer otro view controller, en el que me vas mostrar el rating del libro: sobre una escala de 5, pones la estrella amarilla por cada punto que tenga y la negra para los vacios.
+4- Mostrar los libros en un collection view.
+5- EN el collection view, mostrar un boton en la parte derecha del navigation, que abra un alert con el titulo y description del libro.
+**6- EN el boton del collection poner el tamaño minimo correcto y que se vea el texto y me lo haces por atributos.
