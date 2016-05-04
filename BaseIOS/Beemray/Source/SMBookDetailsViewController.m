@@ -33,6 +33,11 @@
 
 #pragma mark - Private method
 
+/**
+ *  Method to do our stuff when loading flag changes
+ *
+ *  @param loading flag
+ */
 - (void)setLoading:(BOOL)loading {
     if (_loading != loading) {
         _loading = loading;
@@ -51,8 +56,6 @@
     [_bookDescription setText:[_book bookDescription]];
     [_bookAverating setText:[[_book averageRating] stringValue]];
     [_imagesSegmentedControl setSelectedSegmentIndex:0];
-    
-    [_bookDescription setContentOffset: CGPointMake(0,-220) animated:NO];
     
     NSURL *bookURL = [NSURL URLWithString:[[_book images] small]];
     
@@ -111,6 +114,10 @@
     [super viewDidLoad];
     
     [self setup];
+}
+
+- (void)viewDidLayoutSubviews {
+    [self.bookDescription setContentOffset:CGPointZero animated:NO];
 }
 
 #pragma mark - NavigationDescriptor methods.

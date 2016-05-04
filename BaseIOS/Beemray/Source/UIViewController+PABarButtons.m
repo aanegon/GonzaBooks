@@ -12,6 +12,7 @@ static NSString * const kMenuButtonImage = @"";
 static NSString * const kGoBackButtonImage = @"";
 static NSString * const kCalendarButtonImage = @"";
 static NSString * const kSearchButtonImage = @"";
+static double const kMinButtonSize = 40.0;
 
 @implementation UIViewController (PABarButtons)
 
@@ -110,13 +111,12 @@ static NSString * const kSearchButtonImage = @"";
     CGSize size = [text sizeWithAttributes:attributes];
     
     //seguro estoy de que tu así no lo harías.... pero funca jajaj
-    if (size.width < 40.0) {
-        size.width = 40.0;
+    if (size.width < kMinButtonSize) {
+        size.width = kMinButtonSize;
     }
-    if (size.height < 40.0) {
-        size.height = 40.0;
+    if (size.height < kMinButtonSize) {
+        size.height = kMinButtonSize;
     }
-    
     
     CGRect rect = CGRectMake([button frame].origin.x, [button frame].origin.y, size.width, size.height);
     
